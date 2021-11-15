@@ -1,0 +1,119 @@
+###Create a playbook that will:
+* Install apache
+* Create a apache home page with your name and System Information.
+* Reload apache
+
+### PLAYBOOK
+
+ ![image](https://user-images.githubusercontent.com/19822562/141729277-4ade231d-8882-429e-a4eb-b8aed8a2a5c3.png)
+
+### RESULT
+ ![image](https://user-images.githubusercontent.com/19822562/141729170-ba3bb67b-e0a2-42bb-8e4d-0c79824b3488.png)
+
+
+### Update above playbook to reload apache only when content of home page get's updated.
+ 
+### PLAYBOOK
+![image](https://user-images.githubusercontent.com/19822562/141729804-d6a14908-d667-47bd-b636-0618ae093b38.png)
+
+
+### RESULT FOR UNCHANGED CONTENT
+
+![image](https://user-images.githubusercontent.com/19822562/141729660-ab0b9f1a-596b-49ca-9921-7fad58b31a6c.png)
+ 
+### PLAYBOOK
+
+![image](https://user-images.githubusercontent.com/19822562/141730322-0e4cc4b8-5181-4fc6-807f-e40cd58b806b.png)
+
+### RESULT FOR UNCHANGED CONTENT
+
+![image](https://user-images.githubusercontent.com/19822562/141730281-c4231ec2-045f-48ab-bd39-af2769a8bbb3.png)
+
+### Update above playbook to install git, vim, ntp...
+### PLAYBOOK
+
+![image](https://user-images.githubusercontent.com/19822562/141731404-3e5755d3-bb7c-49a7-be26-3518a887d222.png)
+
+### RESULT
+
+![image](https://user-images.githubusercontent.com/19822562/141731284-b6c758c2-7807-4492-91e6-6828aefdd2ad.png)
+
+### CHECK ON REMOTE SIDE
+
+![image](https://user-images.githubusercontent.com/19822562/141731179-4ee54f97-3d22-49f8-b26f-11257030dad9.png)
+
+### Update above playbook to create a user passed as parameter.
+
+### PLAYBOOK
+
+![image](https://user-images.githubusercontent.com/19822562/141732281-9190571c-a040-4754-a601-130749f63169.png)
+
+### RESULT
+
+![image](https://user-images.githubusercontent.com/19822562/141732223-b590fe6a-1225-41ec-9c5b-08d4fe42730f.png)
+
+
+### CHECK ON REMOTE SIDE
+
+![image](https://user-images.githubusercontent.com/19822562/141732144-dfda5bb4-06e0-4a7b-9109-59ff9cf069e8.png)
+
+
+### Update above playbook to add ninja & sensei user to opstree group else to devops group.
+
+### PLAYBOOK
+
+![image](https://user-images.githubusercontent.com/19822562/141733872-37aafcf8-d837-4db3-945b-d873ad6da81b.png)
+
+### RESULT
+
+![image](https://user-images.githubusercontent.com/19822562/141733783-fcb93734-0d4e-4e71-b998-7676076f3fa2.png)
+
+### CHECK ON REMOTE SIDE
+
+![image](https://user-images.githubusercontent.com/19822562/141733649-adac104e-afb8-4a80-bab5-957913fa7793.png)
+
+### Update above playbook to prompt for user details to be created
+
+### PLAYBBOK
+
+![image](https://user-images.githubusercontent.com/19822562/141742685-f020179e-7570-416a-b2ab-41ebcefd404e.png)
+
+
+### RESULT
+
+![image](https://user-images.githubusercontent.com/19822562/141742326-7ffcbb0c-a148-49c5-b26e-b289c3104c13.png)
+
+### CHECK ON REMOTE SIDE
+
+![image](https://user-images.githubusercontent.com/19822562/141742510-534f9e41-ffde-44ef-852a-e9a30b3349dc.png)
+
+ ### Update above playbook create all the users attending current training.
+ 
+ ### PLAYBOOK
+here i only provided only two members of training:
+
+![image](https://user-images.githubusercontent.com/19822562/141744596-4bbaab12-f7ed-42d6-af8d-7a278d594e4d.png)
+
+### RESULT
+
+![image](https://user-images.githubusercontent.com/19822562/141744508-9e043a5d-8957-4d58-9a2a-08b4173e317d.png)
+
+### CHECK ON REMOTE SIDE
+
+![image](https://user-images.githubusercontent.com/19822562/141744705-faeecbca-2d90-4e9d-8ddd-e080d94f08e4.png)
+
+
+### Update your playbook to externalise your tasks.
+ create a another playbook named sample play book and use import_playbook:  <name of playbook> to externalise our main playbook
+ 
+ ![image](https://user-images.githubusercontent.com/19822562/141762486-138d9c14-2671-4ad9-ac36-ada43acc4540.png)
+
+
+
+
+ 
+ 
+
+
+
+
