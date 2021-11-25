@@ -1,0 +1,97 @@
+```
+Create Ansible Roles for Nginx, Tomcat, Java.
+Roles should run on at least two different OS - For Ex - Ubuntu and Centos.
+It should include Templates for the configuration files with all the dynamic value that needs to be updated.
+It should include handlers and encryption of vars.
+At the end of Role, it should print the current state of Nginx and tomcat .
+Roles execution should be only through jenkins .
+Jenkins will pull the updated role every time from Git only.
+User can select which role he/she want to execute from jenkins - tomcat/nginx/java .
+User should have the options to execute the role on centos or ubuntu or together on both.
+Java role should be available separately for tomcat's dependency and will be executed when tomcat role executes and should have option to run separately from jenkins.
+
+```
+### Create Ansible Roles for Nginx, Tomcat, Java.
+
+* Create a role using command
+```
+ansible-galaxy init <role name>
+```
+![image](https://user-images.githubusercontent.com/19822562/143390673-79da86f7-19bf-4ae6-9e0e-eef656ab0505.png)
+
+* In task of rolenginx
+
+![image](https://user-images.githubusercontent.com/19822562/143391977-bb330b3e-a67d-4a35-9995-e8994ab489b9.png)
+
+![image](https://user-images.githubusercontent.com/19822562/143392262-2631d76f-2173-47b3-b69d-92acd9a20e71.png)
+
+* IN handlers
+
+![image](https://user-images.githubusercontent.com/19822562/143392315-1d9f50a0-fe9f-4fa9-912b-fb744a5aab95.png)
+
+* In vars
+
+![image](https://user-images.githubusercontent.com/19822562/143392369-7a8c5731-9682-4da1-b964-b493816bf1ac.png)
+
+* in templates
+
+![image](https://user-images.githubusercontent.com/19822562/143392439-56791f14-f595-4140-bd7c-1ccec430b536.png)
+
+![image](https://user-images.githubusercontent.com/19822562/143392526-b32887be-11a0-4842-b1d7-731691d00992.png)
+
+* In tasks of roletomcat
+
+![image](https://user-images.githubusercontent.com/19822562/143392778-d325b41b-ac76-4e94-af4f-1e4b76625fb3.png)
+
+![image](https://user-images.githubusercontent.com/19822562/143392859-ba89296a-6356-4681-9c24-452e7f60adc1.png)
+
+* In vars
+
+![image](https://user-images.githubusercontent.com/19822562/143392911-76235c53-b1a9-4174-a12a-63211d74ee35.png)
+
+* In meta define the dependency of tomcat that is java therefore mentioned the role java
+
+![image](https://user-images.githubusercontent.com/19822562/143393072-266c7f30-14cc-44f7-89d9-6e55335e5618.png)
+
+* In task of role java
+
+![image](https://user-images.githubusercontent.com/19822562/143393193-001c996f-c1d8-40ff-ac53-f00c8571a0e7.png)
+
+* In vars
+
+![image](https://user-images.githubusercontent.com/19822562/143393251-92eb7ec2-2d45-419d-9bc5-2c660e512b67.png)
+
+
+### At the end of Role, it should print the current state of Nginx and tomcat 
+
+![image](https://user-images.githubusercontent.com/19822562/143394935-a4861ff9-e2c2-4fe0-8e08-85df94e74f94.png)
+
+### Roles execution should be only through jenkins .Jenkins will pull the updated role every time from Git only.
+
+* In git create one repositry here i named nginxtomcat . Create local repo in nginx folder now using url of repository first pull and then push the created roles in repository.
+So that it will be up to date
+
+
+![image](https://user-images.githubusercontent.com/19822562/143393761-a77a3089-3410-4a3c-9db8-0ce4e907ce4c.png)
+
+* Integrate the git repository to jenkins
+* first create job named " ansibleassignment" in configuration 
+
+![image](https://user-images.githubusercontent.com/19822562/143394098-b79a6244-15c8-4fca-9269-8220d61543a5.png)
+
+![image](https://user-images.githubusercontent.com/19822562/143394146-666e8ecd-65dd-46ce-b515-b7c74ea62405.png)
+
+### User can select which role he/she want to execute from jenkins - tomcat/nginx/java .
+
+* Choose choice parameters 
+
+![image](https://user-images.githubusercontent.com/19822562/143394249-4c6e123f-8013-4e28-9d40-59172b9051cb.png)
+
+* Install ansible plugin then in configuration choose Invoke ansible playbook
+
+![image](https://user-images.githubusercontent.com/19822562/143394535-8bf42567-7886-46e0-bc99-fb734cafdbda.png)
+
+### RESULT 
+
+![Screenshot (113)](https://user-images.githubusercontent.com/19822562/143394784-78609855-30bd-4a4a-8740-295cf11cb58a.png)
+
