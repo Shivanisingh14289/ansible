@@ -1,0 +1,109 @@
+*** ANsible
+```
+Create below infrastructure
+4 Web servers having Apache and use Nginx as load balancer on those servers
+Create a git repository having an index.html "Hello from Opstree".
+Create an ansible role to setup apache.
+Create an ansible role to setup Nginx as a load balancer on the 4 apache web servers
+Create an ansible role to deploy the code from the git repository to all web servers in one single go.
+Create an ansible role to deploy the code from the git repository to all web servers in rolling fashion.
+Create an ansible role to deploy the code from the git repository to all web servers in a batches passed as parameter i.e if we pass 3 then first deployment will happen on 3 servers and then only on 1. The default value of batch will be 2 . Achieve blue green deployment here.
+
+```
+
+### 4 Web servers having Apache and use Nginx as load balancer on those servers
+
+![image](https://user-images.githubusercontent.com/19822562/143388184-ec61b283-e896-4364-8ecc-e6fb595dafdc.png)
+
+### Create a git repository having an index.html "Hello from Opstree"
+
+* Git Repository on git lab 
+
+![image](https://user-images.githubusercontent.com/19822562/143388364-2e430d85-181b-4db6-86f5-652a46ed6a9f.png)
+
+* Content
+
+![image](https://user-images.githubusercontent.com/19822562/143388268-5fd86f65-303b-4ed7-86e5-e004972ba82a.png)
+
+### Create an ansible role to setup apache.
+* Create a role named loadbalance using ansible galaxy command
+```
+ansible-galaxy init loadbalance
+```
+* tree command to see the folders created by ansible-galaxy
+
+![image](https://user-images.githubusercontent.com/19822562/143388620-d8bdc688-aed2-413e-b957-88c85e8499df.png)
+
+* In tasks created various yml file categorized based on "os_family" to install apache on remote server and one main.yml to include various tasks
+
+![image](https://user-images.githubusercontent.com/19822562/143388451-d611b799-158a-4230-bfff-b16e9f8732f4.png)
+
+* for debian 
+
+![image](https://user-images.githubusercontent.com/19822562/143388926-94724608-b279-4cc8-b059-668ac51ccfc1.png)
+
+* for RedHat
+
+![image](https://user-images.githubusercontent.com/19822562/143389023-1cef66ff-01c6-4634-b51a-cdab1acf1f22.png)
+
+* Main.yml
+
+![image](https://user-images.githubusercontent.com/19822562/143389093-989771b7-1034-4557-9f88-df268481dc36.png)
+
+* In vars
+
+![image](https://user-images.githubusercontent.com/19822562/143389851-60eaa87b-ba06-4855-aeb6-532d4e50ee2a.png)
+
+* In handlers
+
+![image](https://user-images.githubusercontent.com/19822562/143389916-25cec9c7-f63f-4d0c-8354-96a3944a31ee.png)
+
+
+
+### Create an ansible role to setup Nginx as a load balancer on the 4 apache web servers
+
+* Similarly for create role for nginx load balancing
+```
+ansible-galaxy init lb
+```
+* In tasks created various yml file based on "os_family" and one main yml file which include these tasks
+
+* for Debian
+
+![image](https://user-images.githubusercontent.com/19822562/143389386-d5264419-4885-43e4-bf6c-52a4f8ca090d.png)
+
+* for RedHat
+
+![image](https://user-images.githubusercontent.com/19822562/143389446-3820fe27-1a23-4e8f-92c4-6d3df8a6e23f.png)
+
+* main.yml
+
+![image](https://user-images.githubusercontent.com/19822562/143389505-c3888642-cbea-4f16-abee-42de85c48f33.png)
+
+* In vars 
+
+![image](https://user-images.githubusercontent.com/19822562/143389611-7bdabcc8-6ece-4d83-8701-3bacb6d48395.png)
+
+* In handlers
+
+![image](https://user-images.githubusercontent.com/19822562/143389672-72fd5b9d-d4f7-423e-a0a7-ea7687550a60.png)
+
+* In templates
+
+![image](https://user-images.githubusercontent.com/19822562/143389744-78a31b9a-4d02-4e67-aeb8-b33ee3d725ce.png)
+
+### Create an ansible role to deploy the code from the git repository to all web servers in one single go.
+
+![image](https://user-images.githubusercontent.com/19822562/143390052-f1f09f34-99cc-4c6c-9233-0f6c358dd85f.png)
+
+### Create an ansible role to deploy the code from the git repository to all web servers in a batches passed as parameter i.e if we pass 3 then first deployment will happen on 3 servers and then only on 1. The default value of batch will be 2 . Achieve blue green deployment here.
+
+* Can use serial in master.yml to send in batches default value will be 2
+
+![image](https://user-images.githubusercontent.com/19822562/143390226-a312e2fe-974c-48ff-b6d8-2fe6fb496f53.png)
+
+
+
+
+
+
